@@ -7,6 +7,7 @@ if ($data['type']=='url_verification') {
     echo json_encode($data["challenge"]);
 } else if ($data['type']=='event_callback') {
     // error_log(print_r($data, true));
+    error_log(print_r($data, true));
     $event = $data["event"];
     // error_log(print_r($event, true));
 
@@ -38,6 +39,7 @@ if ($data['type']=='url_verification') {
                             ]
                         ],
                         [
+                            "name" => "cancel",
                             "type" => "button",
                             "text" => "キャンセル",
                             "value" => "cancel"
@@ -47,7 +49,7 @@ if ($data['type']=='url_verification') {
             ]
         ];
     
-        $ch = curl_init("https://hooks.slack.com/services/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");
+        $ch = curl_init("xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx");
         curl_setopt( $ch, CURLOPT_POSTFIELDS, json_encode($message));
         curl_setopt( $ch, CURLOPT_HTTPHEADER, array("Content-type: application/json"));
         curl_setopt( $ch, CURLOPT_RETURNTRANSFER, false );
